@@ -1,2 +1,2 @@
-"# luna_back" 
-"# Luna_backend" 
+npm install
+node server.js
