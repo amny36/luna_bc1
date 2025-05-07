@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { createTask, getAllTasks, getTaskById, updateTask, deleteTask } = require("../models/Task");
 const authMiddleware = require('../middleware/auth'); 
-
+const db = require("../config/db");
 
 router.post("/", authMiddleware, (req, res) => {
   const userId = req.user.id; 

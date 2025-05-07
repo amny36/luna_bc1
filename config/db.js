@@ -15,4 +15,18 @@ db.connect((err) => {
   console.log("MySQL connected");
 });
 
+db.on("error", (err) => {
+  console.error("MySQL error:", err);
+  if (err.code === "PROTOCOL_CONNECTION_LOST") {
+    db.connect((err) => {
+      if (err) {
+        console.error("Error reconnecting to MySQL:", err);
+        process.exit(1);
+      }
+      console.log("MySQL reconnected");
+    });
+  }
+});
+
 module.exports = db;
+

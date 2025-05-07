@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { updateUserCycles, getUserCycles } = require("../models/User");
 const authMiddleware = require("../middleware/auth"); 
-
+const db = require("../config/db");
 
 router.post("/cycles", authMiddleware, (req, res) => {
   const userId = req.user.id; 
@@ -15,7 +15,6 @@ router.post("/cycles", authMiddleware, (req, res) => {
     res.status(200).json({ message: "Cycle completed" });
   });
 });
-
 
 router.get("/cycles", authMiddleware, (req, res) => {
   const userId = req.user.id;

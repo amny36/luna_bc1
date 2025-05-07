@@ -10,8 +10,8 @@ const createUser = async (userData, callback) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-  db.query(query, [username, email, hashedPassword], callback);
-};
+db.query(query, [username, email, hashedPassword], callback);
+}
 
 
 const getUserByEmail = (email, callback) => {
