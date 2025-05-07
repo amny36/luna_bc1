@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Luna
 
 A simple task management system with user authentication and task tracking.  
@@ -37,3 +38,6 @@ npm install
 node server.js
 ```
 
+=======
+# luna_bc1
+>>>>>>> 5430a9ec71d123a47390d2009ecf8c89ffb72857
